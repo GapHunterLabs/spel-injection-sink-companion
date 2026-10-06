@@ -1,0 +1,11 @@
+<html>
+<body>
+Reports a Spring <code>ExpressionParser.parseExpression(...)</code> call whose argument is built from an HTTP
+endpoint parameter, and a constant expression that references a dangerous type through <code>T(...)</code>
+(<code>Runtime</code>, <code>ProcessBuilder</code>, <code>System</code>).
+<!-- tooltip end -->
+<p>Input that becomes SpEL source text is parsed and evaluated as code, which can lead to remote code execution
+(CWE-917), the mechanism behind CVE-2022-22963 in Spring Cloud Function. Keep user input out of expression text; use
+a <code>SimpleEvaluationContext</code> when an expression must be evaluated.</p>
+</body>
+</html>
